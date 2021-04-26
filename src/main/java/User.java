@@ -1,15 +1,12 @@
+import Enums.Designation;
 import Interfaces.Verification;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class User implements Comparable<User>{
 
     // All users of the Library either teachers or students are categorised as users
 
-    private String name;
-    private Designation designation;
-    private List<String> booksBorrowed;
+    private final String name;
+    private final Designation designation;
     private String bookTitle;
     private Integer rank;
     private Integer originalQueueNumber;
@@ -19,7 +16,6 @@ public class User implements Comparable<User>{
     public User(String name, Designation designation) {
         this.name = name;
         this.designation = designation;
-        this.booksBorrowed = new ArrayList<String>();
 
 
         if (designation == Designation.Teacher){
@@ -78,7 +74,7 @@ public class User implements Comparable<User>{
         if(verification.checkingForBookAvailability(bookTitle)){
             Library.addBorrowerToQueue(this);
         }
-        return "Book successfully returned";
+        return "Book borrowing process complete";
     }
 
 
@@ -86,7 +82,7 @@ public class User implements Comparable<User>{
         Library.addBooksToLibrary(booKTitle, 1);
         Library.removeFromListOfBorrower(this.name, booKTitle);
         System.out.printf("%s, you have returned %s", name, booKTitle);
-        System.out.println("");
+        System.out.println();
         return "Book successfully returned";
     }
 
@@ -95,7 +91,6 @@ public class User implements Comparable<User>{
         return "User{" +
                 "name='" + name + '\'' +
                 ", designation=" + designation +
-                ", booksBorrowed=" + booksBorrowed +
                 ", bookTitle='" + bookTitle + '\'' +
                 ", rank=" + rank+
                 '}';

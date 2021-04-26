@@ -1,3 +1,5 @@
+import Enums.Designation;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -21,81 +23,60 @@ public class Main {
         Library.addBooksToLibrary("english", 4);
         Library.addBooksToLibrary("mathematics", 5);
 
-        System.out.println("The list of books in the Library:");
-        System.out.println(Library.getBookList());
-        System.out.println("");
+//        System.out.println("The list of books in the Library:");
+//        System.out.println(Library.getBookList());
+//        System.out.println();
+//
+//        System.out.println("The list of borrowers and books borrowed:");
+//        System.out.println(Library.getListOfBorrowers());
+//        System.out.println();
 
-        System.out.println("The list of borrowers and books borrowed:");
-        System.out.println(Library.getListOfBorrowers());
-        System.out.println("");
-
-//        FIFO IMPLEMENTATION
-
-
-        debby.borrowBook("Naruto");
-        debby.borrowBook("The Avatar");
+//        System.out.println(daro.getName());
 
 
 
+//        debby.borrowBook("Naruto");
+//        debby.borrowBook("The Avatar");
+//
+//
+//
         peter.borrowBook("mathematics");
-        daro.borrowBook("english");
+        daro.borrowBook("mathematics");
         ose.borrowBook("chemistry");
         moses.borrowBook("english");
         malik.borrowBook("biology");
 
 
-
-
-
-
-
-
-//        PRIORITY IMPLEMENTATION
-
-//        mike.borrowBook("mathematics");
-//        debby.borrowBook("The Avatar");
-//        ose.borrowBook("mathematics");
-//        moses.borrowBook("mathematics");
-//        malik.borrowBook("biology");
-//        debby.borrowBook("Naruto");
-//        daro.borrowBook("mathematics");
-
-
-        System.out.println("");
-
-        System.out.println("The list of books in the Library:");
-        System.out.println(Library.getBookList());
-        System.out.println("");
-
-        System.out.println("The list of borrowers and books borrowed:");
-        System.out.println(Library.getListOfBorrowers());
-        System.out.println("");
-
-        moses.returnBook("english");
-        System.out.println("");
-
-        System.out.println("The list of books in the Library:");
-        System.out.println(Library.getBookList());
-        System.out.println("");
+//        System.out.println();
 //
-        System.out.println("The list of borrowers and books borrowed:");
-        System.out.println(Library.getListOfBorrowers());
-        System.out.println("");
-//
-        malik.returnBook("biology");
-        System.out.println("");
-        System.out.println("The list of books in the Library:");
-        System.out.println(Library.getBookList());
-        System.out.println("");
-
-
-        System.out.println("The list of borrowers and books borrowed:");
-        System.out.println(Library.getListOfBorrowers());
-        System.out.println("");
-
 //        System.out.println("The list of books in the Library:");
 //        System.out.println(Library.getBookList());
-
-//        System.out.println(Library.priorityQueueOfBorrowers);
+//        System.out.println();
+//
+//        System.out.println("The list of borrowers and books borrowed:");
+//        System.out.println(Library.getListOfBorrowers());
+//        System.out.println();
+//
+//        moses.returnBook("english");
+//        System.out.println();
+//
+//        System.out.println("The list of books in the Library:");
+//        System.out.println(Library.getBookList());
+//        System.out.println();
+//
+//        System.out.println("The list of borrowers and books borrowed:");
+//        System.out.println(Library.getListOfBorrowers());
+//        System.out.println();
+//
+//        malik.returnBook("biology");
+//        System.out.println();
+//        System.out.println("The list of books in the Library:");
+//        System.out.println(Library.getBookList());
+//        System.out.println();
+//
+//
+//        System.out.println("The list of borrowers and books borrowed:");
+//        System.out.println(Library.getListOfBorrowers());
+//        System.out.println();
     }
 }

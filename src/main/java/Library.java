@@ -4,20 +4,30 @@ import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Library {
-    private static Map<String, Integer> bookList = new HashMap<>();
-    private static final Map<String, String> listOfBorrowers = new HashMap<>();
+    private static final Map<String, Integer> bookList = new HashMap<>();
+    private static Map<String, String> listOfBorrowers = new HashMap<>();
     public static Queue<User> queueOfBorrowers = new ConcurrentLinkedQueue<>();
     public static PriorityQueue<User> priorityQueueOfBorrowers = new PriorityQueue<>();
+
 
 
     public static Map<String, Integer> getBookList() {
         return bookList;
     }
 
+    public static void setListOfBorrowers(Map<String, String> listOfBorrowers) {
+        Library.listOfBorrowers = listOfBorrowers;
+    }
+
+    public static void setQueueOfBorrowers(Queue<User> queueOfBorrowers) {
+        Library.queueOfBorrowers = queueOfBorrowers;
+    }
 
     public static Map<String, String> getListOfBorrowers() {
         return listOfBorrowers;
     }
+
+
 
 
     public static void addBooksToLibrary(String booKTitle, Integer copies){
@@ -91,7 +101,7 @@ public class Library {
                 bookList.put(title.toLowerCase(), bookList.get(title.toLowerCase()) - 1);
                 System.out.printf("%s you've been borrowed %s.", queueOfBorrowers.peek().getName(),title);
                 System.out.println();
-                inputInListOfBorrowers();
+                inputInListOfBorrowers(queueOfBorrowers.peek().getName());
             }
         };
         libraryActions.releasingBook(booKTitle);
@@ -131,7 +141,7 @@ public class Library {
 //    }
 
 
-    public static void inputInListOfBorrowers(){
+    public static String  inputInListOfBorrowers(String userName){
         if (!listOfBorrowers.containsKey(queueOfBorrowers.peek().getName())) {
             listOfBorrowers.put(queueOfBorrowers.peek().getName(),
                     queueOfBorrowers.peek().getBookTitle());
@@ -140,10 +150,10 @@ public class Library {
                     listOfBorrowers.get(queueOfBorrowers.peek().getName()) +
                             "| " + queueOfBorrowers.peek().getBookTitle());
         }
-    }
+    return "Borrower's list updated";}
 
 
-    public static void inputInPriorityListOfBorrowers(){
+    public static String inputInPriorityListOfBorrowers(){
         if (!listOfBorrowers.containsKey(priorityQueueOfBorrowers.peek().getName())) {
             listOfBorrowers.put(priorityQueueOfBorrowers.peek().getName(),
                     priorityQueueOfBorrowers.peek().getBookTitle());
@@ -152,7 +162,7 @@ public class Library {
                     listOfBorrowers.get(priorityQueueOfBorrowers.peek().getName()) +
                             "| " + priorityQueueOfBorrowers.peek().getBookTitle());
         }
-    }
+    return "Borrower's list updated";}
 
 
     public static String removeFromListOfBorrower(String name, String bookTitle){
@@ -168,5 +178,4 @@ public class Library {
         }
         return "User successfully removed from list of borrowers";
     }
-
 }
